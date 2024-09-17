@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Your Thumbnail Image from YouTube</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="url"] {
+            width: 100%;
+            max-width: 400px;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button{
+            border-radius: 40px; 
+        }
+
+        img {
+            max-width: 100%;   
+            max-height: 300px; 
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Get Your Thumbnail Image from YouTube</h1>
+    <input type="url" name="link_video" id="link_video" placeholder="Enter YouTube video URL" required>
+    <button onclick="get_thumb()">Get it Now</button>
+    <div>
+        <img id="img" src="">
+    </div>
+    <script>
+        function get_thumb(){
+            link_video = document.getElementById('link_video')
+            video_id = link_video.value.split('v=')[1]
+            document.getElementById("img").setAttribute('src', `https://i3.ytimg.com/vi/${video_id}/maxresdefault.jpg`)
+            link_video.value = ''
+        }
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
