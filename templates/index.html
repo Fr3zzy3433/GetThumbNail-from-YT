@@ -29,6 +29,10 @@
 
         button{
             border-radius: 40px; 
+            background-color: green;
+            color: white;
+            height: 25px;
+            width: 110px;
         }
 
         img {
@@ -46,11 +50,26 @@
         <img id="img" src="">
     </div>
     <script>
+
+        let Teclado = document.getElementById('link_video').addEventListener('keydown', function(enter) {
+            if (enter.key === 'Enter') {
+                get_thumb();
+            }
+        });
+
         function get_thumb(){
+            if (link_video.value != ''){
             link_video = document.getElementById('link_video')
             video_id = link_video.value.split('v=')[1]
             document.getElementById("img").setAttribute('src', `https://i3.ytimg.com/vi/${video_id}/maxresdefault.jpg`)
             link_video.value = ''
+            }
+
+            else{
+                alert('Insert a link on box')
+                document.getElementById('link_video').style.border = 'red-light';
+
+            }
         }
         
     </script>
